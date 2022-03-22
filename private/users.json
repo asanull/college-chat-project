@@ -1,0 +1,14 @@
+{
+    "default": {
+        "name": null,
+        "username": null,
+        "password": null
+    },
+    "users": [
+        {
+            "name": "asa",
+            "username": "asa",
+            "password": "pass"
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+:root {
+    --bg-color: #000;
+    --primary-color: #ccc;
+    --secondary-color: #999
+}
+* {
+    caret-color: #ccc;
+}
+body {
+    background-color: var(--bg-color);
+    color:  var(--primary-color);
+    font-size: 12px;
+    line-height: 16px;
+    font-family: Consolas;
+    padding: 8px;
+}
+input {
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    border-style: none;
+}
+input:focus {
+    outline: none;
+}
+a {
+    color: var(--primary-color);
+}
+.btn {
+    text-decoration: underline;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.psw {
+    color: var(--bg-color);
+    -webkit-text-security:disc;
+}
+.select {
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}

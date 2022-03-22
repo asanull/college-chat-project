@@ -216,8 +216,34 @@ ioserver.on('connection', io =>
                         <div id="log"></div>
 
                         <form id="input" onsubmit="inputSubmit(this);return false">
-                            ${user.username} > <input>
-                        </form>`,
+                            <span class="user">${user.username}</span> > <input>
+                        </form>
+                        
+                        
+                        <details>
+                            <summary>
+                                <span class="material-icons cmd">
+                                    more_vert
+                                </span>
+                            </summary>
+                            <div class="modal" style="padding: 24px">
+                                <div class="one">
+                                    <br>
+                                    upload image
+                                </div>
+                                <div class="two">
+                                    settings<br>
+                                    --------<br>
+                                    Font:
+                                </div>
+                                <span><span class="user">${user.username}</span> ></span>
+                            </div>
+                        </details>
+                        
+                        
+                        
+                        
+                        `,
                     username:credentials.username
                 }
                 io.emit('updatebody', packet)

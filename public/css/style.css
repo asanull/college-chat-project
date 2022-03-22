@@ -1,18 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 :root {
     --bg-color: #000;
-    --primary-color: #ccc;
-    --secondary-color: #999
+    --first-color: #ccc;
+    --second-color: #999;
+    --third-color: #ccc;
 }
 * {
-    caret-color: #ccc;
+    caret-color: var(--third-color);
 }
+.first {color:  var(--first-color)}
+.second {color:  var(--second-color)}
+.third {color:  var(--third-color)}
 body {
     background-color: var(--bg-color);
-    color:  var(--primary-color);
+    color:  var(--first-color);
     font-size: 12px;
     line-height: 16px;
     font-family: Consolas;
-    padding: 8px;
+    margin: 24px;
 }
 input {
     background-color: inherit;
@@ -26,7 +31,18 @@ input:focus {
     outline: none;
 }
 a {
-    color: var(--primary-color);
+    color: var(--first-color);
+}
+.cmd {
+    transition-duration: .25s;
+    color: var(--first-color);
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+.cmd:hover {
+    color: var(--second-color);
+    cursor: pointer;
 }
 .btn {
     text-decoration: underline;
@@ -53,4 +69,40 @@ a {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none
+}
+
+.modal {
+    background-color: inherit;
+    left: 50%;
+    max-width: 90%;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em;
+    text-align: left;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    display: grid;
+    gap: 12px;
+}
+.modal .one {
+    text-align: center;
+    grid-column: 1
+}
+.modal .two {
+    grid-column: 2
+}
+.user {
+    color: var(--second-color)
+}
+summary {
+    list-style: none;
+}
+summary:focus {
+  outline: none;
+}
+summary::-webkit-details-marker {
+  display: none;
 }

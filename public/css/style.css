@@ -36,11 +36,22 @@ a {
 .cmd {
     transition-duration: .25s;
     color: var(--first-color);
-    position: absolute;
+    position: fixed;
     right: 24px;
     top: 24px;
 }
 .cmd:hover {
+    color: var(--second-color);
+    cursor: pointer;
+}
+.upld {
+    transition-duration: .25s;
+    color: var(--first-color);
+    position: fixed;
+    right: 24px;
+    top: 60px;
+}
+.upld:hover {
     color: var(--second-color);
     cursor: pointer;
 }
@@ -89,10 +100,13 @@ a {
 }
 .modal .one {
     text-align: center;
-    grid-column: 1
+    grid-column: 1;
 }
 .modal .two {
     grid-column: 2
+}
+.modal .one div {
+    padding-top: 48px;
 }
 .user {
     color: var(--second-color)
@@ -105,4 +119,20 @@ summary:focus {
 }
 summary::-webkit-details-marker {
   display: none;
+}
+
+#scrollbar::-webkit-scrollbar-track
+{
+	background-color:var(--bg-color)
+}
+
+#scrollbar::-webkit-scrollbar
+{
+	width: 6px;
+	background-color:var(--third-color)
+}
+
+#scrollbar::-webkit-scrollbar-thumb
+{
+	background-color:var(--third-color)
 }

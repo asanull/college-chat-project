@@ -20,6 +20,7 @@ function consoleCheck() {
     setTimeout(()=>{consoleCheck()},100)
 }
 consoleCheck()
+let reload = false
 let user = {username:null}
 function formSubmit(form) {
     let credentials = {
@@ -29,13 +30,20 @@ function formSubmit(form) {
     if(credentials.username==""||credentials.password==""){location.reload()}
     else socket.emit('login',credentials)
 }
+function messageValid(str) {
+    if(str.length<=215&&str.trim().length!=0)
+    return true
+    else return false
+}
 function inputSubmit(input) {
     let packet = {
-        message:input.childNodes[1].value,
+        message:input.childNodes[3].value,
         name:user.username
     }
-    socket.emit("messageServer",packet)
-    input.childNodes[1].value=""
+    if(messageValid(packet.message)){
+        socket.emit("messageServer",packet)
+        input.childNodes[3].value=""
+    }
 }
 let socket = io()
 socket.on('updatebody', packet => {
@@ -50,4 +58,8 @@ socket.on('messageRecieved', packet => {
     element.innerHTML=`${packet.name} : ${packet.message}`
     document.getElementById("log").appendChild(element)
     document.getElementById("input").scrollIntoView()
+})
+socket.on('serverrestarted', () => {
+    socket.close()
+    setTimeout(()=>{location.reload()},1000)
 })

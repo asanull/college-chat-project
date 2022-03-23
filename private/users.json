@@ -9,6 +9,21 @@
             "name": "asa",
             "username": "asa",
             "password": "pass"
+        },
+        {
+            "name": "madda",
+            "username": "madda",
+            "password": "madda"
+        },
+        {
+            "name": "adam",
+            "username": "adam",
+            "password": "madda"
+        },
+        {
+            "name": "jacob",
+            "username": "jacob",
+            "password": "madda"
         }
     ]
 }
